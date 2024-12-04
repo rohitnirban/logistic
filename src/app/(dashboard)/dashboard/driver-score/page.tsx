@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { DriverTable } from './driver-table'
-import { DriverDetails } from './driver-details'
 
 // Mock data for drivers
 const drivers = [
@@ -15,35 +15,32 @@ const drivers = [
 
 // Mock data for driver behavior
 const driverBehavior = {
-    1: { rashDriving: 2, unnecessaryBrakes: 5, quickTurns: 3, successfulDeliveries: 45, unsuccessfulDeliveries: 2 },
-    2: { rashDriving: 1, unnecessaryBrakes: 3, quickTurns: 2, successfulDeliveries: 50, unsuccessfulDeliveries: 1 },
-    3: { rashDriving: 20, unnecessaryBrakes: 42, quickTurns: 28, successfulDeliveries: 10, unsuccessfulDeliveries: 32 },
-    4: { rashDriving: 2, unnecessaryBrakes: 4, quickTurns: 3, successfulDeliveries: 47, unsuccessfulDeliveries: 2 },
-    5: { rashDriving: 0, unnecessaryBrakes: 2, quickTurns: 1, successfulDeliveries: 52, unsuccessfulDeliveries: 0 },
+    1: { rashDriving: 2, rapidAcceleration: 3, hardBrake: 1, maxTurnableSpeed: 65 },
+    2: { rashDriving: 1, rapidAcceleration: 2, hardBrake: 1, maxTurnableSpeed: 60 },
+    3: { rashDriving: 5, rapidAcceleration: 7, hardBrake: 6, maxTurnableSpeed: 75 },
+    4: { rashDriving: 2, rapidAcceleration: 3, hardBrake: 2, maxTurnableSpeed: 62 },
+    5: { rashDriving: 0, rapidAcceleration: 1, hardBrake: 0, maxTurnableSpeed: 58 },
 }
 
 // Scoring function
-function calculateDrivingScore(rashDriving: number, unnecessaryBrakes: number, quickTurns: number, successfulDeliveries: number, unsuccessfulDeliveries: number): number {
+function calculateDrivingScore(rashDriving: number, rapidAcceleration: number, hardBrake: number, maxTurnableSpeed: number): number {
     // Weights
-    const W1 = 0.8, W2 = 0.6, W3 = 0.6, W4 = 0.1, W5 = 0.2;
+    const W1 = 0.3, W2 = 0.25, W3 = 0.25, W4 = 0.2;
 
     // Normalize input (example normalization, adjust as needed)
     const rashScore = rashDriving / 10;
-    const brakeScore = unnecessaryBrakes / 10;
-    const turnScore = quickTurns / 10;
-    const successScore = successfulDeliveries / 50; // Assuming max 50 deliveries for normalization
-    const failureScore = unsuccessfulDeliveries / 10;
+    const accelerationScore = rapidAcceleration / 10;
+    const brakeScore = hardBrake / 10;
+    const speedScore = (maxTurnableSpeed - 50) / 30; // Assuming 50-80 km/h range
 
     // Calculate score
-    const score = 100 - (W1 * rashScore + W2 * brakeScore + W3 * turnScore) + (W4 * successScore - W5 * failureScore);
+    const score = 100 - (W1 * rashScore + W2 * accelerationScore + W3 * brakeScore + W4 * speedScore) * 100;
 
     // Clamp the score between 0 and 100
     return Math.max(0, Math.min(100, parseFloat(score.toFixed(2))));
 }
 
 export default function DriverPerformancePage() {
-    const [selectedDriver, setSelectedDriver] = useState<(typeof drivers)[0] | null>(null)
-
     // Calculate scores and assign them to drivers
     const driversWithScores = drivers.map(driver => {
         const behavior = driverBehavior[driver.id as keyof typeof driverBehavior];
@@ -51,10 +48,9 @@ export default function DriverPerformancePage() {
             ...driver,
             score: calculateDrivingScore(
                 behavior.rashDriving,
-                behavior.unnecessaryBrakes,
-                behavior.quickTurns,
-                behavior.successfulDeliveries,
-                behavior.unsuccessfulDeliveries
+                behavior.rapidAcceleration,
+                behavior.hardBrake,
+                behavior.maxTurnableSpeed
             ),
         };
     });
@@ -62,17 +58,8 @@ export default function DriverPerformancePage() {
     return (
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-2xl font-bold mb-6">Driver Performance</h1>
-            <DriverTable
-                drivers={driversWithScores}
-                onViewMore={(driver) => setSelectedDriver(driver)}
-            />
-            {selectedDriver && (
-                <DriverDetails
-                    driver={selectedDriver}
-                    behavior={driverBehavior[selectedDriver.id as keyof typeof driverBehavior]}
-                    onClose={() => setSelectedDriver(null)}
-                />
-            )}
+            <DriverTable drivers={driversWithScores} />
         </div>
     )
 }
+

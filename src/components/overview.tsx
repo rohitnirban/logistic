@@ -1,6 +1,6 @@
 'use client';
 
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Cell } from 'recharts';
 
 const data = [
   { name: 'Rajesh Kumar', total: 80 },
@@ -31,7 +31,11 @@ export function Overview() {
           tickLine={false}
           axisLine={false}
         />
-        <Bar dataKey="total" fill="#adfa1d" radius={[0, 4, 4, 0]} />
+        <Bar dataKey="total" radius={[0, 4, 4, 0]}>
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={entry.total < 50 ? 'red' : 'blue'} />
+          ))}
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );

@@ -138,6 +138,36 @@ export default function DriverRegistrationForm() {
                     required
                   />
                 </div>
+                <div>
+                  <Label htmlFor="age">Age</Label>
+                  <Input
+                    id="age"
+                    name="age"
+                    value={driverData.age}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    value={driverData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="phoneNumber">Phone Number</Label>
+                  <Input
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value={driverData.phoneNumber}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
                 <Button type="button" onClick={nextStep}>Next</Button>
               </div>

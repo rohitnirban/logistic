@@ -21,7 +21,7 @@ const caseStudies = [
         image: farmerImage,
     },
     {
-        title: "Boosting Business Efficiency with BharatTrans",
+        title: "Boosting Business Efficiency with DriveSense",
         problem: "High logistics costs hurting SME profits.",
         solution: "Using AI-driven multi-modal transport.",
         results: "30% reduction in logistics costs, 15% decrease in delivery time.",
@@ -54,7 +54,7 @@ export default function CaseStudiesPage() {
                     transition={{ duration: 0.5 }}
                     className="text-4xl font-bold text-center mb-10"
                 >
-                    Real-Life Examples of BharatTrans in Action
+                    Real-Life Examples of DriveSense in Action
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">

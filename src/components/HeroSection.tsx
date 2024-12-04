@@ -37,7 +37,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Button variant="secondary">Get Started with BharatTrans</Button>
+            <Button variant="secondary">Get Started with DriveSense</Button>
           </motion.div>
         </div>
       </div>

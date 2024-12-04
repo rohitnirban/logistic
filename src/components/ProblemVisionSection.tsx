@@ -19,7 +19,7 @@ export default function ProblemVisionSection() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="mt-4 text-lg text-gray-700"
       >
-        High logistics costs, wastage of perishables, and inefficiencies plague India’s supply chain. BharatTrans is on a mission to solve this crisis.
+        High logistics costs, wastage of perishables, and inefficiencies plague India’s supply chain. DriveSense is on a mission to solve this crisis.
       </motion.p>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[

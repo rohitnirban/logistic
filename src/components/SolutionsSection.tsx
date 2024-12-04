@@ -11,7 +11,7 @@ export default function SolutionsSection() {
         transition={{ duration: 0.5 }}
         className="text-3xl font-bold text-center"
       >
-        How BharatTrans is Changing the Game
+        How DriveSense is Changing the Game
       </motion.h2>
       <div className="mt-10 grid grid-cols-3 gap-10">
         <motion.div

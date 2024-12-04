@@ -48,7 +48,7 @@ export default function Footer() {
                 {/* Contact Info Section */}
                 <div>
                     <h3 className="text-xl font-bold mb-4">Contact Info</h3>
-                    <p>Email: <a href="mailto:info@bharattrans.com" className="hover:text-blue-400 transition">info@bharattrans.com</a></p>
+                    <p>Email: <a href="mailto:info@DriveSense.com" className="hover:text-blue-400 transition">info@DriveSense.com</a></p>
                     <p>Phone: <a href="tel:+91XXXXXXXXXX" className="hover:text-blue-400 transition">+91-XXXXXXXXXX</a></p>
                     <p>Address: Your Address Here</p>
                     <form className="mt-4 flex">
@@ -62,7 +62,7 @@ export default function Footer() {
                 </div>
             </motion.div>
             <div className="mt-8 text-center text-gray-400">
-                <p>&copy; {new Date().getFullYear()} BharatTrans. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} DriveSense. All rights reserved.</p>
             </div>
         </footer>
     );

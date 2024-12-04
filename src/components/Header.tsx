@@ -13,7 +13,7 @@ export default function Header() {
         transition={{ duration: 0.5 }}
         className="text-xl font-bold"
       >
-        <Link href={'/'}>BharatTrans</Link>
+        <Link href={'/'}>DriveSense</Link>
       </motion.div>
       <motion.nav
         initial={{ opacity: 0, x: 50 }}

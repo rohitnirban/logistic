@@ -12,7 +12,7 @@ export default function ImpactSection() {
         transition={{ duration: 0.5 }}
         className="text-3xl font-bold text-center mb-10"
       >
-        BharatTrans in Action: Tangible Results for Farmers, Businesses, and the Environment
+        DriveSense in Action: Tangible Results for Farmers, Businesses, and the Environment
       </motion.h2>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
         {[

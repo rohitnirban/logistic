@@ -17,6 +17,12 @@ export const navItems: NavItem[] = [
     label: 'Dashboard'
   },
   {
+    title: 'Users',
+    href: '/dashboard/users',
+    icon: 'user',
+    label: 'Users'
+  },
+  {
     title: 'Register New Vehicle',
     href: '/dashboard/register-new-vehicle',
     icon: 'vehicle',

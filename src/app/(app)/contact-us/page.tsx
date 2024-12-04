@@ -18,7 +18,7 @@ export default function ContactUsPage() {
                     transition={{ duration: 0.5 }}
                     className="text-4xl font-bold text-center mb-12 text-blue-800"
                 >
-                    Get in Touch with BharatTrans
+                    Get in Touch with DriveSense
                 </motion.h2>
 
                 {/* Contact Form */}
@@ -70,21 +70,21 @@ export default function ContactUsPage() {
                     <h3 className="text-2xl font-semibold mb-6 text-center text-blue-800">Frequently Asked Questions</h3>
                     <Accordion type="single" collapsible className="space-y-4">
                         <AccordionItem value="item-1">
-                            <AccordionTrigger className="text-lg font-medium">How does BharatTrans work?</AccordionTrigger>
+                            <AccordionTrigger className="text-lg font-medium">How does DriveSense work?</AccordionTrigger>
                             <AccordionContent className="text-gray-600">
-                                BharatTrans integrates cutting-edge technology and a network of logistics partners to offer efficient, reliable, and scalable logistics solutions across India.
+                                DriveSense integrates cutting-edge technology and a network of logistics partners to offer efficient, reliable, and scalable logistics solutions across India.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
-                            <AccordionTrigger className="text-lg font-medium">How can I partner with BharatTrans?</AccordionTrigger>
+                            <AccordionTrigger className="text-lg font-medium">How can I partner with DriveSense?</AccordionTrigger>
                             <AccordionContent className="text-gray-600">
                                 We are always looking to collaborate with logistics providers, technology partners, and government bodies. Contact us through our partnership page for more details.
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
-                            <AccordionTrigger className="text-lg font-medium">What industries does BharatTrans serve?</AccordionTrigger>
+                            <AccordionTrigger className="text-lg font-medium">What industries does DriveSense serve?</AccordionTrigger>
                             <AccordionContent className="text-gray-600">
-                                BharatTrans serves a wide range of industries, including e-commerce, manufacturing, agriculture, and retail. Our solutions are tailored to meet the needs of businesses of all sizes.
+                                DriveSense serves a wide range of industries, including e-commerce, manufacturing, agriculture, and retail. Our solutions are tailored to meet the needs of businesses of all sizes.
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

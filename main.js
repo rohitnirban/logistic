@@ -11,6 +11,15 @@ server.on('message', (msg, rinfo) => {
     console.log(`Message received: ${msg}`);
     const message = msg.toString();
 
+    // Parse the message as JSON
+    let parsedMessage;
+    try {
+        parsedMessage = JSON.parse(message);
+    } catch (err) {
+        console.error('Error parsing message as JSON', err);
+        return;
+    }
+
     // Initialize data object with default values
     const data = {
         ax: 0,
@@ -22,36 +31,26 @@ server.on('message', (msg, rinfo) => {
     };
 
     // Extract acceleration and gyroscope data
-    let validData = false;
-
-    const accelerationMatch = message.match(/Acceleration: ([\d\-.]+), ([\d\-.]+), ([\d\-.]+)/);
-    if (accelerationMatch) {
-        data.ax = parseFloat(accelerationMatch[1]) || 0;
-        data.ay = parseFloat(accelerationMatch[2]) || 0;
-        data.az = parseFloat(accelerationMatch[3]) || 0;
-        validData = true;
+    if (parsedMessage.acceleration) {
+        data.ax = parsedMessage.acceleration.x || 0;
+        data.ay = parsedMessage.acceleration.y || 0;
+        data.az = parsedMessage.acceleration.z || 0;
     }
 
-    const gyroscopeMatch = message.match(/Gyroscope: ([\d\-.]+), ([\d\-.]+), ([\d\-.]+)/);
-    if (gyroscopeMatch) {
-        data.gx = parseFloat(gyroscopeMatch[1]) || 0;
-        data.gy = parseFloat(gyroscopeMatch[2]) || 0;
-        data.gz = parseFloat(gyroscopeMatch[3]) || 0;
-        validData = true;
+    if (parsedMessage.gyroscope) {
+        data.gx = parsedMessage.gyroscope.x || 0;
+        data.gy = parsedMessage.gyroscope.y || 0;
+        data.gz = parsedMessage.gyroscope.z || 0;
     }
 
-    // Write data only if valid data is extracted
-    if (validData) {
-        fs.writeFile('public/data.json', JSON.stringify(data, null, 2), (err) => {
-            if (err) {
-                console.error('Error writing to file', err);
-            } else {
-                console.log('Data saved to data.json:', data);
-            }
-        });
-    } else {
-        console.warn('No valid data found in the message. File not updated.');
-    }
+    // Write data to file
+    fs.writeFile('public/data.json', JSON.stringify(data, null, 2), (err) => {
+        if (err) {
+            console.error('Error writing to file', err);
+        } else {
+            console.log('Data saved to data.json:', data);
+        }
+    });
 });
 
 server.on('listening', () => {

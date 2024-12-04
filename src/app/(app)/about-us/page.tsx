@@ -29,7 +29,7 @@ export default function AboutUsPage() {
                 >
                     <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
                     <p className="text-lg leading-relaxed">
-                        At BharatTrans, we envision a revolution in the Indian logistics sector,
+                        At DriveSense, we envision a revolution in the Indian logistics sector,
                         where technology seamlessly integrates with sustainability and inclusivity.
                         Our goal is to create a future where logistics operations are efficient,
                         reliable, and accessible to everyone, empowering businesses and communities alike.
@@ -51,14 +51,14 @@ export default function AboutUsPage() {
                     </ul>
                 </motion.div>
 
-                {/* Why BharatTrans? */}
+                {/* Why DriveSense? */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="mb-12"
                 >
-                    <h3 className="text-2xl font-semibold mb-4">Why BharatTrans?</h3>
+                    <h3 className="text-2xl font-semibold mb-4">Why DriveSense?</h3>
                     <ul className="list-disc list-inside text-lg leading-relaxed">
                         <li>Innovative technology solutions tailored for the Indian logistics landscape.</li>
                         <li>Commitment to reducing operational costs and improving efficiency.</li>

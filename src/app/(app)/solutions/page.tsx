@@ -49,11 +49,11 @@ export default function SolutionsPage() {
                     transition={{ duration: 0.5 }}
                     className="text-4xl font-bold text-center mb-10"
                 >
-                    How BharatTrans Tackles Inefficiencies in the Indian Logistics Sector
+                    How DriveSense Tackles Inefficiencies in the Indian Logistics Sector
                 </motion.h2>
 
                 <p className="text-center text-lg mb-12 max-w-3xl mx-auto">
-                    BharatTrans is dedicated to revolutionizing the logistics landscape by implementing innovative technologies 
+                    DriveSense is dedicated to revolutionizing the logistics landscape by implementing innovative technologies 
                     and solutions that drive efficiency, reduce costs, and minimize environmental impact.
                 </p>
 

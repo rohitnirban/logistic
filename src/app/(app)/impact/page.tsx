@@ -48,7 +48,7 @@ export default function ImpactPage() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-lg text-center text-gray-600 mb-12"
                 >
-                    Here’s what BharatTrans has achieved so far, and our future goals.
+                    Here’s what DriveSense has achieved so far, and our future goals.
                 </motion.p>
 
                 {/* Economic Impact */}
