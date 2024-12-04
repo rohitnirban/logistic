@@ -35,7 +35,7 @@ function calculateDrivingScore(rashDriving: number, unnecessaryBrakes: number, q
     const failureScore = unsuccessfulDeliveries / 10;
 
     // Calculate score
-    let score = 100 - (W1 * rashScore + W2 * brakeScore + W3 * turnScore) + (W4 * successScore - W5 * failureScore);
+    const score = 100 - (W1 * rashScore + W2 * brakeScore + W3 * turnScore) + (W4 * successScore - W5 * failureScore);
 
     // Clamp the score between 0 and 100
     return Math.max(0, Math.min(100, parseFloat(score.toFixed(2))));

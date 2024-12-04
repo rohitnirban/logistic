@@ -8,11 +8,25 @@ import { toast } from "@/hooks/use-toast"
 import axios from 'axios'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
+type UlipVehicleDetails = {
+  rc_owner_name: string
+  rc_regn_no: string
+  rc_regn_dt: string
+  rc_regn_upto: string
+  rc_chasi_no: string
+  rc_eng_no: string
+  rc_maker_desc: string
+  rc_insurance_policy_no: string
+  rc_insurance_upto: string
+  rc_status: string
+  rc_vch_catg_desc: string
+}
+
 export default function VehicleRegistrationForm() {
   const [deviceId, setDeviceId] = useState('')
   const [vehicleNumber, setVehicleNumber] = useState('')
   const [isVerified, setIsVerified] = useState(false)
-  const [ulipDl, setUlipDl] = useState<any>({});
+  const [ulipDl, setUlipDl] = useState<UlipVehicleDetails | null>(null) 
 
   const verifyDetails = async () => {
     setIsVerified(false)
@@ -97,17 +111,17 @@ export default function VehicleRegistrationForm() {
               {isVerified ? (
                 <div className='mb-10'>
                   <h1 className='font-bold text-xl underline mb-4'>Verify Details</h1>
-                  <p>Driver Full Name : {ulipDl.rc_owner_name}</p>
-                  <p>Registration Number : {ulipDl.rc_regn_no}</p>
-                  <p>Registration Date : {ulipDl.rc_regn_dt}</p>
-                  <p>Registration upto : {ulipDl.rc_regn_upto}</p>
-                  <p>Chasi Number : {ulipDl.rc_chasi_no}</p>
-                  <p>Engine Number : {ulipDl.rc_eng_no}</p>
-                  <p>Maker: {ulipDl.rc_maker_desc}</p>
-                  <p>Insurance Policy Number : {ulipDl.rc_insurance_policy_no}</p>
-                  <p>Insurance Upto : {ulipDl.rc_insurance_upto}</p>
-                  <p>Status : {ulipDl.rc_status}</p>
-                  <p>Vehicle Category : {ulipDl.rc_vch_catg_desc}</p>
+                  <p>Driver Full Name : {ulipDl?.rc_owner_name}</p>
+                  <p>Registration Number : {ulipDl?.rc_regn_no}</p>
+                  <p>Registration Date : {ulipDl?.rc_regn_dt}</p>
+                  <p>Registration upto : {ulipDl?.rc_regn_upto}</p>
+                  <p>Chasi Number : {ulipDl?.rc_chasi_no}</p>
+                  <p>Engine Number : {ulipDl?.rc_eng_no}</p>
+                  <p>Maker: {ulipDl?.rc_maker_desc}</p>
+                  <p>Insurance Policy Number : {ulipDl?.rc_insurance_policy_no}</p>
+                  <p>Insurance Upto : {ulipDl?.rc_insurance_upto}</p>
+                  <p>Status : {ulipDl?.rc_status}</p>
+                  <p>Vehicle Category : {ulipDl?.rc_vch_catg_desc}</p>
                 </div>
               ) : (
                 <p></p>

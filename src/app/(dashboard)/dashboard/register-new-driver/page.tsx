@@ -22,6 +22,16 @@ type DriverData = {
   preferedRoute: string
 }
 
+type UlipDriverDetails = {
+  bioFullName: string
+  bioGenderDesc: string
+  bioMobileNo: string
+  bioCitiZen: string
+  bioEndorsementNo: string
+  bioPermDistName: string
+}
+
+
 const initialData: DriverData = {
   name: '',
   age: 0,
@@ -40,7 +50,7 @@ export default function DriverRegistrationForm() {
   const [step, setStep] = useState(1)
   const [driverData, setDriverData] = useState<DriverData>(initialData)
   const [isVerified, setIsVerified] = useState(false)
-  const [ulipDl, setUlipDl] = useState<any>({});
+  const [ulipDl, setUlipDl] = useState<UlipDriverDetails | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -162,12 +172,12 @@ export default function DriverRegistrationForm() {
                   {isVerified ? (
                     <div>
                       <h1>Verify Details</h1>
-                      <p>Driver Full Name : {ulipDl.bioFullName}</p>
-                      <p>Driver Gender : {ulipDl.bioGenderDesc}</p>
-                      <p>Driver Mobile Number : {ulipDl.bioMobileNo}</p>
-                      <p>Driver Citizenship : {ulipDl.bioCitiZen}</p>
-                      <p>Driver Endorsement Number : {ulipDl.bioEndorsementNo}</p>
-                      <p>Driver District : {ulipDl.bioPermDistName}</p>
+                      <p>Driver Full Name : {ulipDl?.bioFullName}</p>
+                      <p>Driver Gender : {ulipDl?.bioGenderDesc}</p>
+                      <p>Driver Mobile Number : {ulipDl?.bioMobileNo}</p>
+                      <p>Driver Citizenship : {ulipDl?.bioCitiZen}</p>
+                      <p>Driver Endorsement Number : {ulipDl?.bioEndorsementNo}</p>
+                      <p>Driver District : {ulipDl?.bioPermDistName}</p>
                     </div>
                   ) : (
                     <p></p>
