@@ -1,3 +1,3 @@
-const endpoint = 'https://13.232.94.169:5000'
+const endpoint = 'https://logistic.rohitnirban.com'
 
 export default endpoint
