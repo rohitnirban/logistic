@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { toast } from "@/hooks/use-toast"
 import axios from 'axios'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import endpoint from '@/constants/api'
 
 type UlipVehicleDetails = {
   rc_owner_name: string
@@ -33,7 +34,7 @@ export default function VehicleRegistrationForm() {
     console.log(vehicleNumber);
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/verify/vahaan',
+        `${endpoint}/api/verify/vahaan`,
         {
           vehiclenumber: vehicleNumber
         },

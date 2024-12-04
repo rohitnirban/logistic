@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { toast } from "@/components/ui/use-toast"
 import { ScrollArea } from '@/components/ui/scroll-area'
 import axios from 'axios'
+import endpoint from '@/constants/api'
 
 type DriverData = {
   name: string
@@ -61,7 +62,7 @@ export default function DriverRegistrationForm() {
     setIsVerified(false)
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/verify',
+        `${endpoint}/api/verify`,
         {
           dlnumber: driverData.drivingLicense,
           dob: driverData.dob
