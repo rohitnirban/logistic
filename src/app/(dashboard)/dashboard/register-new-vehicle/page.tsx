@@ -127,6 +127,7 @@ export default function VehicleRegistrationForm() {
               ) : (
                 <p></p>
               )}
+              
               <Button type="submit">Register</Button>
               <Button type="button" className='ml-10'>Stop Registration</Button>
             </div>
