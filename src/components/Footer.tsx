@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import { Button } from './ui/button';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -24,7 +23,7 @@ export default function Footer() {
                         <li><Link href="/pricing" className="hover:text-blue-400 transition">Pricing</Link></li>
                     </ul>
                 </div>
-                
+
                 {/* Contact Info Section */}
                 <div>
                     <h3 className="text-xl font-bold mb-4">Contact Info</h3>
