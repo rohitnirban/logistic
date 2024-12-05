@@ -24,40 +24,13 @@ export default function Footer() {
                         <li><Link href="/pricing" className="hover:text-blue-400 transition">Pricing</Link></li>
                     </ul>
                 </div>
-
-                {/* Follow Us Section */}
-                {/* <div className="mb-8 md:mb-0">
-                    <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-                    <div className="flex space-x-4">
-                        <a href="#" aria-label="Facebook" className="hover:text-blue-600 transition">
-                            <Facebook className="h-6 w-6" />
-                        </a>
-                        <a href="#" aria-label="Twitter" className="hover:text-blue-400 transition">
-                            <TwitterLogoIcon className="h-6 w-6" />
-                        </a>
-                        <a href="#" aria-label="LinkedIn" className="hover:text-blue-700 transition">
-                            <LinkedInLogoIcon className="h-6 w-6" />
-                        </a>
-                        <a href="#" aria-label="Instagram" className="hover:text-pink-500 transition">
-                            <InstagramLogoIcon className="h-6 w-6" />
-                        </a>
-                    </div>
-                </div> */}
-
+                
                 {/* Contact Info Section */}
                 <div>
                     <h3 className="text-xl font-bold mb-4">Contact Info</h3>
                     <p>Email: <a href="mailto:info@DriveSense.com" className="hover:text-blue-400 transition">as.ashitrai@gmail.com</a></p>
                     <p>Phone: <a href="tel:+91XXXXXXXXXX" className="hover:text-blue-400 transition">+91-8090144807</a></p>
                     <p>Address: Chandigarh University, Mohali, Punjab</p>
-                    <form className="mt-4 flex">
-                        <input
-                            type="email"
-                            placeholder="Subscribe to our newsletter"
-                            className="p-2 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                        <Button className="ml-2">Subscribe</Button>
-                    </form>
                 </div>
             </motion.div>
             <div className="mt-8 text-center text-gray-400">
