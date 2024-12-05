@@ -112,47 +112,7 @@ export default function CaseStudiesPage() {
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-12">Data Flow Diagram</h2>
                     <div className="relative max-w-4xl mx-auto">
-                        <svg className="w-full" viewBox="0 0 800 200">
-                            <defs>
-                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
-                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4299e1" />
-                                </marker>
-                            </defs>
-                            <line x1="100" y1="100" x2="300" y2="100" stroke="#4299e1" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                            <line x1="500" y1="100" x2="700" y2="100" stroke="#4299e1" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                            <line x1="400" y1="120" x2="400" y2="180" stroke="#4299e1" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                        </svg>
-                        {diagramSteps.map((step, index) => (
-                            <motion.div
-                                key={step.id}
-                                className="absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
-                                style={{
-                                    left: `${(index / (diagramSteps.length - 1)) * 100}%`,
-                                    top: index === diagramSteps.length - 1 ? '90%' : '50%',
-                                }}
-                                onMouseEnter={() => handleStepHover(step.id)}
-                                onMouseLeave={handleStepLeave}
-                                whileHover={{ scale: 1.1 }}
-                            >
-                                <div className={`p-4 rounded-full ${activeSteps === step.id ? 'bg-blue-500 text-white' : 'bg-white dark:bg-gray-800'} shadow-lg`}>
-                                    <step.icon className="w-8 h-8" />
-                                </div>
-                                <span className="mt-2 text-sm font-medium">{step.label}</span>
-                            </motion.div>
-                        ))}
-                    </div>
-                    <div className="mt-12 text-center">
-                        <p className="text-lg text-gray-600 dark:text-gray-300">
-                            {activeSteps === 'vehicle'
-                                ? "DriveSense devices in vehicles collect real-time data on performance and driver behavior."
-                                : activeSteps === 'server'
-                                    ? "Our servers process the collected data using advanced AI and IoT algorithms."
-                                    : activeSteps === 'app'
-                                        ? "Insights and alerts are delivered to the DriveSense mobile app for easy access."
-                                        : activeSteps === 'users'
-                                            ? "Fleet managers use the insights to make data-driven decisions and improve operations."
-                                            : "Hover over each step to learn more about the DriveSense data flow."}
-                        </p>
+                        <img src="/flow.jpeg" alt="Flow" />
                     </div>
                 </div>
             </section>

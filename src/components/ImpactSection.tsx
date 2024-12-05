@@ -17,7 +17,7 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: 'Sarah Johnson',
+    name: 'Rohit Sharma',
     role: 'Fleet Manager',
     company: 'LogiTech Solutions',
     testimonial:
@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: 'Michael Chen',
+    name: 'Anjali Mehta',
     role: 'Operations Head',
     company: 'CargoLink',
     testimonial:
@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    name: 'Emily Rodriguez',
+    name: 'Vikram Singh',
     role: 'IT Manager',
     company: 'Global Solutions Inc.',
     testimonial:
@@ -44,7 +44,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    name: 'Raj Patel',
+    name: 'Priya Patel',
     role: 'Supply Chain Director',
     company: 'FreshFarm Logistics',
     testimonial:
@@ -53,7 +53,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 5,
-    name: 'Aisha Khan',
+    name: 'Amit Kumar',
     role: 'CEO',
     company: 'EcoTrans Solutions',
     testimonial:
