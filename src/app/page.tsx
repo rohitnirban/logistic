@@ -25,7 +25,7 @@ const Popup = () => {
       <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
         <div className="bg-white p-6 rounded-lg shadow-lg text-center">
           <h2 className="text-xl font-semibold mb-4">Welcome!</h2>
-          <p className="mb-4">Click the "Get Started" button to view the dashboard.</p>
+          <p className="mb-4">Click the &quot;Get Started&quot; button to view the dashboard.</p>
           <button
             onClick={handleClose}
             className="bg-blue-500 text-white py-2 px-4 rounded-md"
