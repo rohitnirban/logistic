@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
 import { DriverTable } from './driver-table'
 
 // Mock data for drivers

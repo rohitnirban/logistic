@@ -53,6 +53,7 @@ export default function DriverDetailsPage({ params }: { params: { id: string } }
   const [drivingScore, setDrivingScore] = useState<number>(100); // Default driving score
 
   useEffect(() => {
+    console.log(drivingScore);
     // Function to fetch the values from data.json and update states
     const fetchDriverMetrics = async () => {
       try {
