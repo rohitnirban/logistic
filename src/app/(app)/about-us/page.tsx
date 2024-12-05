@@ -1,145 +1,79 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Lightbulb, Target } from 'lucide-react';
 
 export default function AboutUsPage() {
     return (
         <>
             <Header />
-            <section className="py-16 px-10 bg-gray-50 text-gray-800">
-                <motion.h2
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-4xl font-bold text-center mb-10"
-                >
-                    About Us
-                </motion.h2>
+            <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+                <section className="relative py-20 overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src="https://images.pexels.com/photos/1123972/pexels-photo-1123972.jpeg"
+                            alt="Abstract background"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black opacity-50"></div>
+                    </div>
+                    <div className="container mx-auto px-4 relative z-10">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">
+                            About DriveSense
+                        </h1>
+                        <p className="text-xl text-gray-200 text-center max-w-3xl mx-auto">
+                            Revolutionizing fleet management with cutting-edge technology and actionable insights
+                        </p>
+                    </div>
+                </section>
 
-                {/* Our Vision */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="mb-12"
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Our Vision</h3>
-                    <p className="text-lg leading-relaxed">
-                        At DriveSense, we envision a revolution in the Indian logistics sector,
-                        where technology seamlessly integrates with sustainability and inclusivity.
-                        Our goal is to create a future where logistics operations are efficient,
-                        reliable, and accessible to everyone, empowering businesses and communities alike.
-                    </p>
-                </motion.div>
-
-                {/* Our Mission */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="mb-12"
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-                    <ul className="list-disc list-inside text-lg leading-relaxed">
-                        <li>Utilize cutting-edge technology to optimize logistics processes.</li>
-                        <li>Promote sustainability through eco-friendly practices.</li>
-                        <li>Ensure inclusivity by providing equal opportunities for all stakeholders.</li>
-                    </ul>
-                </motion.div>
-
-                {/* Why DriveSense? */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    className="mb-12"
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Why DriveSense?</h3>
-                    <ul className="list-disc list-inside text-lg leading-relaxed">
-                        <li>Innovative technology solutions tailored for the Indian logistics landscape.</li>
-                        <li>Commitment to reducing operational costs and improving efficiency.</li>
-                        <li>Collaborative partnerships with key industry stakeholders.</li>
-                    </ul>
-                </motion.div>
-
-                {/* Our Team */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    className="mb-12"
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Our Team</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {['John Doe', 'Jane Smith', 'Alice Johnson'].map((name, index) => (
-                            <div key={index} className="text-center">
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.5, delay: 1 + index * 0.2 }}
-                                    className="mb-2"
-                                >
-                                    <Image
-                                        src="https://img.freepik.com/premium-photo/3d-avatar-cartoon-character_113255-93124.jpg"
-                                        alt={`Team Member ${index + 1}`}
-                                        width={150}
-                                        height={150}
-                                        className="rounded-full mx-auto"
-                                    />
-                                </motion.div>
-                                <h4 className="font-bold">{name}</h4>
-                                <p className="text-gray-600">
-                                    {index === 0 && 'CEO - 15 years of experience in logistics management.'}
-                                    {index === 1 && 'CTO - Expert in technology integration for logistics.'}
-                                    {index === 2 && 'COO - Focused on operational excellence and sustainability.'}
+                <section className="py-20 bg-white dark:bg-gray-800">
+                    <div className="container mx-auto px-4">
+                        <h2 className="text-3xl font-bold text-center mb-12">Our Vision and Mission</h2>
+                        <div className="grid md:grid-cols-2 gap-12">
+                            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-8 shadow-lg">
+                                <div className="flex items-center mb-4">
+                                    <Lightbulb className="w-8 h-8 text-blue-500 mr-4" />
+                                    <h3 className="text-2xl font-semibold">Vision</h3>
+                                </div>
+                                <p className="text-gray-600 dark:text-gray-300">
+                                    "To create a safer, more efficient transport ecosystem through cutting-edge technology."
                                 </p>
                             </div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* Partners */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.2 }}
-                    className="mb-12"
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Our Partners</h3>
-                    <div className="flex flex-wrap justify-center gap-8">
-                        {['Transport Network', 'Technology Provider', 'Government Body'].map((partner, index) => (
-                            <div key={index} className="text-center">
-                                <Image
-                                    src="https://www.apllogistics.com/wp-content/uploads/2019/03/APL_Logo.png"
-                                    alt={`Partner ${index + 1}`}
-                                    width={100}
-                                    height={100}
-                                    className="mx-auto"
-                                />
-                                <p>{partner}</p>
+                            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-8 shadow-lg">
+                                <div className="flex items-center mb-4">
+                                    <Target className="w-8 h-8 text-green-500 mr-4" />
+                                    <h3 className="text-2xl font-semibold">Mission</h3>
+                                </div>
+                                <p className="text-gray-600 dark:text-gray-300">
+                                    "To empower transport owners with actionable insights and build trust in fleet operations."
+                                </p>
                             </div>
-                        ))}
+                        </div>
                     </div>
-                </motion.div>
+                </section>
 
-                {/* Career Opportunities */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.4 }}
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Career Opportunities</h3>
-                    <p className="text-lg leading-relaxed mb-4">
-                        We are always looking for passionate and skilled professionals to join our team.
-                        If you&apos;re ready to make a difference in the logistics industry, check out our job listings below.
-                    </p>
-                    <Button className="mt-2">View Job Openings</Button>
-                </motion.div>
-            </section>
+                <section className="py-20 bg-gray-50 dark:bg-gray-900">
+                    <div className="container mx-auto px-4">
+                        <h2 className="text-3xl font-bold text-center mb-12">Our Story</h2>
+                        <div className="max-w-3xl mx-auto">
+                            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                                DriveSense was born out of a pressing need in the transport industry. Our founders, having worked extensively in fleet management, witnessed firsthand the challenges faced by transport owners and operators.
+                            </p>
+                            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                                They saw how lack of real-time data, inefficient route planning, and poor vehicle maintenance led to increased costs, reduced safety, and lower customer satisfaction. This realization sparked the idea for DriveSense.
+                            </p>
+                            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                                Our team of experienced engineers and industry experts came together with a shared vision: to revolutionize fleet management using cutting-edge technology. We developed advanced algorithms that could process vast amounts of data in real-time, providing fleet owners with actionable insights.
+                            </p>
+                            <p className="text-lg text-gray-600 dark:text-gray-300">
+                                Today, DriveSense is at the forefront of the transport technology revolution. We're not just a software provider; we're a partner in our clients' success. Our platform continues to evolve, incorporating the latest advancements in AI and machine learning to stay ahead of the curve and address the ever-changing needs of the transport industry.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
             <Footer />
         </>
     );

@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ProblemVisionSection from '@/components/ProblemVisionSection';
 import SolutionsSection from '@/components/SolutionsSection';
-import ImpactSection from '@/components/ImpactSection';
+import { TestimonialSlider } from '@/components/ImpactSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <HeroSection />
       <ProblemVisionSection />
       <SolutionsSection />
-      <ImpactSection />
+      <TestimonialSlider />
       <Footer />
     </>
   );
