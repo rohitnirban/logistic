@@ -68,7 +68,7 @@ export default function AboutUsPage() {
                                 Our team of experienced engineers and industry experts came together with a shared vision: to revolutionize fleet management using cutting-edge technology. We developed advanced algorithms that could process vast amounts of data in real-time, providing fleet owners with actionable insights.
                             </p>
                             <p className="text-lg text-gray-600 dark:text-gray-300">
-                                Today, DriveSense is at the forefront of the transport technology revolution. We're not just a software provider; we&lsquo;re a partner in our clients&lsquo; success. Our platform continues to evolve, incorporating the latest advancements in AI and machine learning to stay ahead of the curve and address the ever-changing needs of the transport industry.
+                                Today, DriveSense is at the forefront of the transport technology revolution. We&lsquo;re not just a software provider; we&lsquo;re a partner in our clients&lsquo; success. Our platform continues to evolve, incorporating the latest advancements in AI and machine learning to stay ahead of the curve and address the ever-changing needs of the transport industry.
                             </p>
                         </div>
                     </div>
