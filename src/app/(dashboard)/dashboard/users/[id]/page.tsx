@@ -35,9 +35,9 @@ const getUserDetails = (id: string) => ({
       mileage: 60000, // Mileage in KM
     }
   ],
-  totalDeliveries: 235,
-  drivingScore: 4.6,
-  totalKm: 45000
+  totalDeliveries: 22,
+  drivingScore: 95,
+  totalKm: 373
 })
 
 export default function UserDetailsPage({ params }: { params: { id: string } }) {
@@ -64,7 +64,7 @@ export default function UserDetailsPage({ params }: { params: { id: string } }) 
             <CardTitle className="text-xl font-semibold text-gray-700">Driving Score</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-5xl font-bold text-green-600">{user.drivingScore.toFixed(1)}</p>
+            <p className="text-5xl font-bold text-green-600">{user.drivingScore.toFixed(1)}%</p>
           </CardContent>
         </Card>
         

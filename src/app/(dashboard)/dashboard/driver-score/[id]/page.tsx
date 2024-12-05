@@ -46,11 +46,10 @@ const getDriverDetails = (id: string) => ({
 
 export default function DriverDetailsPage({ params }: { params: { id: string } }) {
   const driver = getDriverDetails(params.id);
-  
+
   const [hardBrake, setHardBrake] = useState<number | null>(null); // Hard brake state
   const [rapidAcceleration, setRapidAcceleration] = useState<number | null>(null); // Rapid acceleration state
   const [maxTurnableSpeed, setMaxTurnableSpeed] = useState<number | null>(null); // Current MTS
-  const [previousMts, setPreviousMts] = useState<number | null>(null); // Previous MTS value for fallback
   const [drivingScore, setDrivingScore] = useState<number>(100); // Default driving score
 
   useEffect(() => {
@@ -71,11 +70,8 @@ export default function DriverDetailsPage({ params }: { params: { id: string } }
 
         if (data.mts !== undefined) {
           setMaxTurnableSpeed(data.mts); // Update max turnable speed state
-          setPreviousMts(data.mts); // Update previous MTS
-        } else {
-          // If no mts is found, keep using the previous value or set it to 0 if none exists
-          setMaxTurnableSpeed(previousMts ?? 0);
         }
+
       } catch (error) {
         console.error("Error fetching metrics from data.json:", error);
       }
@@ -90,7 +86,7 @@ export default function DriverDetailsPage({ params }: { params: { id: string } }
     return () => {
       clearInterval(intervalId);
     };
-  }, [previousMts]); // Re-run the effect if previousMts changes
+  }, []); // This effect runs only once on mount
 
   // Function to calculate the driving score
   const calculateDrivingScore = () => {
@@ -98,17 +94,17 @@ export default function DriverDetailsPage({ params }: { params: { id: string } }
 
     // Decrease score based on hard brake occurrences
     if (hardBrake === 1) {
-      score -= 10;
+      score -= 10; // Deduct 10 points for a hard brake
     }
 
     // Decrease score based on rapid acceleration occurrences
     if (rapidAcceleration === 1) {
-      score -= 5;
+      score -= 5; // Deduct 5 points for rapid acceleration
     }
 
     // Increase score based on max turnable speed (MTS)
-    if (maxTurnableSpeed) {
-      score += maxTurnableSpeed * 10;  // Increase by 10 points for every 1 m/s of MTS
+    if (maxTurnableSpeed !== null) {
+      score += maxTurnableSpeed * 2;  // Increase score by 2 points for every 1 m/s of MTS
     }
 
     // Ensure the score is between 0 and 100
@@ -117,9 +113,11 @@ export default function DriverDetailsPage({ params }: { params: { id: string } }
     setDrivingScore(score);
   };
 
-  // Call calculateDrivingScore when metrics update
+  // Recalculate the driving score only when any of the metric values change
   useEffect(() => {
-    calculateDrivingScore();
+    if (hardBrake !== null || rapidAcceleration !== null || maxTurnableSpeed !== null) {
+      calculateDrivingScore();
+    }
   }, [hardBrake, rapidAcceleration, maxTurnableSpeed]);  // Recalculate when any of these values change
 
   return (
@@ -172,14 +170,14 @@ export default function DriverDetailsPage({ params }: { params: { id: string } }
           </Card>
 
           {/* Driving Score Card */}
-          <Card className="transition-all transform rounded-xl bg-green-100">
+          {/* <Card className="transition-all transform rounded-xl bg-green-100">
             <CardHeader>
               <CardTitle className="text-xl font-semibold text-gray-700">Driving Score</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <p className="text-5xl font-bold text-green-600">{drivingScore}</p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
 
         {/* Personal Information and Allocated Trucks */}

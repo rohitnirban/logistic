@@ -61,7 +61,7 @@ class HardBraking {
 }
 
 // Example usage:
-const hardBraking = new HardBraking(1);  // Deceleration threshold set to 2.5
+const hardBraking = new HardBraking(1.5);  // Deceleration threshold set to 2.5
 
 // Update sensor data every 100 ms
 setInterval(() => {

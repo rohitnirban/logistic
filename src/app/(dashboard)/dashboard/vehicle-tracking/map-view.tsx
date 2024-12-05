@@ -96,7 +96,6 @@ export default function MapView() {
 
   return (
     <div className="-z-10 border-none outline-none">
-      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API!}>
         <GoogleMap
           ref={mapRef}
           mapContainerStyle={containerStyle}
@@ -123,7 +122,6 @@ export default function MapView() {
 
 
         </GoogleMap>
-      </LoadScript>
 
       {/* Display Distance Traveled */}
       {distanceTraveled !== null && (

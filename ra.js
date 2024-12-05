@@ -55,7 +55,7 @@ class RapidAcceleration {
     }
 }
 
-const rapidAcceleration = new RapidAcceleration(1);  // Threshold set to 1.5
+const rapidAcceleration = new RapidAcceleration(1.5);  // Threshold set to 1.5
 
 setInterval(() => {
     rapidAcceleration.updateSensorData();

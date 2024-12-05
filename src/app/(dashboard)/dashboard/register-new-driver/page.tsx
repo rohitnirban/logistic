@@ -202,7 +202,7 @@ export default function DriverRegistrationForm() {
                   </Button>
                   {isVerified ? (
                     <div>
-                      <h1>Verify Details</h1>
+                      <h1 className='font-bold text-xl underline mb-4'>Verify Details</h1>
                       <p>Driver Full Name : {ulipDl?.bioFullName}</p>
                       <p>Driver Gender : {ulipDl?.bioGenderDesc}</p>
                       <p>Driver Mobile Number : {ulipDl?.bioMobileNo}</p>
