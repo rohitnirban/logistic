@@ -140,7 +140,7 @@ export default function ImpactPage() {
                                 className="rounded-lg shadow-lg w-full"
                             />
                             <p className="mt-4 text-gray-600 dark:text-gray-300">
-                                Our intuitive dashboard provides a comprehensive overview of your fleet's performance and key metrics at a glance.
+                                Our intuitive dashboard provides a comprehensive overview of your fleet&lsquo;s performance and key metrics at a glance.
                             </p>
                         </TabsContent>
                         <TabsContent value="reports" className="mt-6">
@@ -149,7 +149,7 @@ export default function ImpactPage() {
                                 <h3 className="text-xl font-semibold">Customizable Reports</h3>
                             </div>
                             <p className="text-gray-600 dark:text-gray-300">
-                                Generate detailed, customizable reports on various aspects of your fleet's performance, including fuel efficiency, driver behavior, and maintenance schedules.
+                                Generate detailed, customizable reports on various aspects of your fleet&lsquo;s performance, including fuel efficiency, driver behavior, and maintenance schedules.
                             </p>
                         </TabsContent>
                         <TabsContent value="alerts" className="mt-6">
@@ -170,7 +170,7 @@ export default function ImpactPage() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                                Leverage the power of data to predict and prevent vehicle breakdowns, optimizing your fleet's performance and reducing downtime.
+                                Leverage the power of data to predict and prevent vehicle breakdowns, optimizing your fleet&lsquo;s performance and reducing downtime.
                             </p>
                             <ul className="space-y-4">
                                 <li className="flex items-center">

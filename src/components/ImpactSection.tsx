@@ -94,7 +94,7 @@ export function TestimonialSlider() {
                       className="w-16 h-16 rounded-full mx-auto mb-4"
                     />
                     <blockquote className="text-gray-600 dark:text-gray-300 italic mb-4">
-                      "{testimonial.testimonial}"
+                    &rdquo;{testimonial.testimonial}&rdquo;
                     </blockquote>
                     <div>
                       <div className="font-bold text-gray-800 dark:text-gray-100">

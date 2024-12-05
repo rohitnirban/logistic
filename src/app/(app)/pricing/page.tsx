@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Check, X, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from '@/components/ui/card'
@@ -92,7 +92,10 @@ export default function SolutionsPage() {
 
     const [isAnnual, setIsAnnual] = useState(false)
 
-
+    useEffect(() => {
+        setIsAnnual(true);
+    }, [isAnnual])
+    
     const [openIndex, setOpenIndex] = useState<number | null>(null)
 
     const toggleFAQ = (index: number) => {
